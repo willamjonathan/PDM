@@ -1,0 +1,32 @@
+# x is the number of overtime hours
+
+# Input
+allo = 0
+
+while allo <= 0 or allo > 3:
+    try:
+        allo = int(input("State your level (1-3) : "))
+    except:
+        continue
+
+try:
+    x = int(input("Enter the number of overtime work in hours: "))
+except:
+    x = -1
+
+while x < 0 or x > 20:
+    try:
+        print("The number of overtime hours should be more than 0 but less than 20.")
+        x = int(input("Please re-enter the number of overtime hours worked: "))
+    except:
+        continue
+
+print(f"The number of overtime work is {x} hours.")
+
+rate_hour = 110000
+salary = 3800000
+allowance = ((allo * 5)/100) * salary
+overtime = rate_hour * x
+total = overtime + salary + allowance
+
+print(f"The total salary is ${total}")
